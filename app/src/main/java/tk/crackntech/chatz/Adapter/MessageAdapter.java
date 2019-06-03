@@ -2,6 +2,8 @@ package tk.crackntech.chatz.Adapter;
 
 import android.content.Context;
 import android.graphics.BitmapFactory;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
@@ -24,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import me.himanshusoni.chatmessageview.ChatMessageView;
+import tk.crackntech.chatz.AppDialog;
 import tk.crackntech.chatz.R;
 import tk.crackntech.chatz.model.Chat;
 
@@ -61,7 +64,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.viewHold
     @Override
     public viewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-        //viewGroup.setOnClickListener(this);
         View v;
         if (i==0)
         v = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_message_left,viewGroup,false);
@@ -79,7 +81,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.viewHold
 
 
         Chat chat = chats.get(i);
-
+        viewHolder.chatView.setOnClickListener(this);
 
         if (!chat.getUser().getId().equals("info"))
         viewHolder.user.setText(chat.getUser().getName());
@@ -125,7 +127,10 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.viewHold
     @Override
     public void onClick(View v) {
         Log.i("TAG","HERE");
+        if (isNetworkAvailable())
         updatedata();
+        else
+            new AppDialog(mContext).noInternet().show();
 
     }
 
@@ -142,9 +147,15 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.viewHold
            image = itemView.findViewById(R.id.mimg);
 
 
+
        }
    }
-
+    private boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) mContext.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnected();
+    }
   public void updatedata(){
         int b = a;
        if (b<chatsall.size()){

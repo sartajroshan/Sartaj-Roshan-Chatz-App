@@ -12,23 +12,42 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.treebo.internetavailabilitychecker.InternetAvailabilityChecker;
+import com.treebo.internetavailabilitychecker.InternetConnectivityListener;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
 import tk.crackntech.chatz.Adapter.ChatAdapter;
+import tk.crackntech.chatz.AppDialog;
 import tk.crackntech.chatz.ItemClickSupport;
 import tk.crackntech.chatz.R;
 import tk.crackntech.chatz.model.Chat;
 import tk.crackntech.chatz.model.Chats;
 import tk.crackntech.chatz.model.User;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements InternetConnectivityListener {
 
     RecyclerView recyclerView;
     ChatAdapter adapter;
+    AppDialog dialog;
     DatabaseReference mDatabase;
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        InternetAvailabilityChecker.getInstance().addInternetConnectivityListener(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        InternetAvailabilityChecker.getInstance().removeInternetConnectivityChangeListener(this);
+    }
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
         adapter = new ChatAdapter(chatscreate());
         recyclerView.setAdapter(adapter);
-
+        dialog = new AppDialog(this);
 
 
         ItemClickSupport.addTo(recyclerView).setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
@@ -118,5 +137,14 @@ public class MainActivity extends AppCompatActivity {
 
 
         return list;
+    }
+
+    @Override
+    public void onInternetConnectivityChanged(boolean isConnected) {
+        if (isConnected)
+            dialog.noInternet().dismiss();
+        else
+            dialog.noInternet().show();
+
     }
 }

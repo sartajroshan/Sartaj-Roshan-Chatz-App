@@ -11,17 +11,21 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.treebo.internetavailabilitychecker.InternetAvailabilityChecker;
+import com.treebo.internetavailabilitychecker.InternetConnectivityListener;
 
 import tk.crackntech.chatz.Adapter.MessageAdapter;
+import tk.crackntech.chatz.AppDialog;
 import tk.crackntech.chatz.R;
 import tk.crackntech.chatz.model.Chat;
 import tk.crackntech.chatz.model.Chats;
 
-public class ChatActivity extends AppCompatActivity {
+public class ChatActivity extends AppCompatActivity implements InternetConnectivityListener {
 
     RecyclerView Rchat;
     MessageAdapter adapter;
     RelativeLayout layoutroot;
+    AppDialog dialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,7 @@ public class ChatActivity extends AppCompatActivity {
         String id = getIntent().getStringExtra("id");
         Rchat = findViewById(R.id.chatRecycler);
         layoutroot = findViewById(R.id.root);
+        dialog = new AppDialog(this);
 
         FirebaseDatabase.getInstance().getReference("chats").child(id).addValueEventListener(new ValueEventListener() {
             @Override
@@ -47,6 +52,25 @@ public class ChatActivity extends AppCompatActivity {
 
             }
         });
+
+    }
+    @Override
+    protected void onStart() {
+        super.onStart();
+        InternetAvailabilityChecker.getInstance().addInternetConnectivityListener(this);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        InternetAvailabilityChecker.getInstance().removeInternetConnectivityChangeListener(this);
+    }
+    @Override
+    public void onInternetConnectivityChanged(boolean isConnected) {
+        if (isConnected)
+            dialog.noInternet().dismiss();
+        else
+            dialog.noInternet().show();
 
     }
 }
