@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+    <me.himanshusoni.chatmessageview.ChatMessageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="start"
+        android:layout_marginVertical="12dp"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:cmv_arrowGravity="start"
+        android:id="@+id/chatm"
+        app:cmv_backgroundColor="#88BABABA"
+        app:cmv_backgroundColorPressed="#FFBABABA"
+        app:cmv_showArrow="true"
+        app:cmv_arrowPosition="left"
+        app:cmv_contentPadding="10dp"
+        app:cmv_arrowMargin="3dp"
+        >
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="anuroop"
+            android:id="@+id/user"
+            android:textColor="#111112"
+            android:textSize="13sp"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="hi"
+            android:layout_below="@id/user"
+            android:id="@+id/message"
+            android:textColor="#111112"
+            android:textSize="20sp"
+            />
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/mimg"
+            android:layout_below="@id/user"
+            android:maxWidth="299dp"
+
+            android:src="@mipmap/ic_launcher"
+            android:visibility="gone"
+            />
+    </me.himanshusoni.chatmessageview.ChatMessageView>
+
+
+</LinearLayout>

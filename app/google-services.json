@@ -1,0 +1,181 @@
+{
+  "project_info": {
+    "project_number": "570694551488",
+    "firebase_url": "https://mychat-ca6b0.firebaseio.com",
+    "project_id": "mychat-ca6b0",
+    "storage_bucket": "mychat-ca6b0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570694551488:android:ad5fd01a98b48eb5",
+        "android_client_info": {
+          "package_name": "com.sartaj.srchat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570694551488-plorss9ahjfubb5qjneeo08b30h4ctsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVQuQquyDgBXa32Yh4BUW9maEoa4rnPFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570694551488-plorss9ahjfubb5qjneeo08b30h4ctsd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570694551488:android:31aff3ca6002f467",
+        "android_client_info": {
+          "package_name": "crackntech.privatefbliker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570694551488-plorss9ahjfubb5qjneeo08b30h4ctsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVQuQquyDgBXa32Yh4BUW9maEoa4rnPFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570694551488-plorss9ahjfubb5qjneeo08b30h4ctsd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-5437333570108736~6044483738"
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570694551488:android:6758d33f64590acf",
+        "android_client_info": {
+          "package_name": "sartajroshan.chatz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570694551488-plorss9ahjfubb5qjneeo08b30h4ctsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVQuQquyDgBXa32Yh4BUW9maEoa4rnPFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570694551488-plorss9ahjfubb5qjneeo08b30h4ctsd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570694551488:android:09ed02e76454a64e",
+        "android_client_info": {
+          "package_name": "tk.crackntech.cashledger"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570694551488-6abq2a1ccnufgdh5rt6rav3la0dlkn9m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tk.crackntech.cashledger",
+            "certificate_hash": "d06be7f1b685db2dd70814fbab9656da65798f67"
+          }
+        },
+        {
+          "client_id": "570694551488-937unjvph0qa76ocithtt5q113hhdlnp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tk.crackntech.cashledger",
+            "certificate_hash": "43a083d95b70ec966dc9c87a7297b1c385dfb026"
+          }
+        },
+        {
+          "client_id": "570694551488-plorss9ahjfubb5qjneeo08b30h4ctsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVQuQquyDgBXa32Yh4BUW9maEoa4rnPFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570694551488-plorss9ahjfubb5qjneeo08b30h4ctsd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:570694551488:android:27307ccb54e256da",
+        "android_client_info": {
+          "package_name": "tk.crackntech.chatz"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "570694551488-01ikfvv5192vmu2su56991s8mir1vs0o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tk.crackntech.chatz",
+            "certificate_hash": "d06be7f1b685db2dd70814fbab9656da65798f67"
+          }
+        },
+        {
+          "client_id": "570694551488-plorss9ahjfubb5qjneeo08b30h4ctsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDVQuQquyDgBXa32Yh4BUW9maEoa4rnPFA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "570694551488-plorss9ahjfubb5qjneeo08b30h4ctsd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
