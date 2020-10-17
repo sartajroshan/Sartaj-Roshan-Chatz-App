@@ -21,7 +21,7 @@ Context mContext;
                 .setCancelable(false)
                 .setRoundedCorners(true)
                 .setBackgroundColorRes(R.color.colorPrimary)
-                .setPositiveButton("Retry", new DialogSheet.OnPositiveClickListener() {
+                .setPositiveButton("RETRY", new DialogSheet.OnPositiveClickListener() {
                     @Override
                     public void onClick(View v) {
                        sheet.dismiss();
